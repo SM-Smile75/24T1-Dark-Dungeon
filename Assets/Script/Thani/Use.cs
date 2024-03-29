@@ -17,13 +17,13 @@ public class Use : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z))
         {
             Ray ray = new Ray(source.position, source.forward);
+
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, range))
             {
-                if(Physics.Raycast(ray, out RaycastHit hitInfo, range))
+                if (hitInfo.collider.gameObject.TryGetComponent(out Usable usableObject))
                 {
-                    if(hitInfo.collider.gameObject.TryGetComponent(out Usable usableObject))
-                    {
-                        usableObject.Use();
-                    }
+                    usableObject.Use();
+                    Debug.Log("Using Object...");
                 }
             }
         }

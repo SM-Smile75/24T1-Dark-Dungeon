@@ -8,8 +8,8 @@ public class ItemInInventory : MonoBehaviour, IPointerClickHandler
 {
     Image icon;
     public CanvasGroup canvas {  get; private set; }
-    public Item thisItem { get; private set; }
-    public Slot slot { get; private set; }
+    public Item thisItem { get; set; }
+    public Slot slot { get; set; }
 
     void Awake()
     {
@@ -29,7 +29,7 @@ public class ItemInInventory : MonoBehaviour, IPointerClickHandler
     {
         if (data.button == PointerEventData.InputButton.Left)
         {
-            Inventory.Singleton.SetCarriedItem(this);
+            InventoryProgram.Singleton.SetCarriedItem(this);
         }
     }
 }

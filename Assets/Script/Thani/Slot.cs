@@ -13,15 +13,15 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
         if (data.button == PointerEventData.InputButton.Left)
         {
-            if(Inventory.carriedItem == null) return;
-            if(thisTag != SlotLabel.Misc && Inventory.carriedItem.thisItem.thisLabel != thisTag)
-            SetItem(Inventory.carriedItem);
+            if(InventoryProgram.carriedItem == null) return;
+            if(thisTag != SlotLabel.Misc && InventoryProgram.carriedItem.thisItem.thisLabel != thisTag)
+            SetItem(InventoryProgram.carriedItem);
         }
     }
 
     public void SetItem(ItemInInventory item)
     {
-        Inventory.carriedItem = null;
+        InventoryProgram.carriedItem = null;
 
         item.slot.thisItem = null;
 

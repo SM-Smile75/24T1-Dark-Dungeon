@@ -7,18 +7,22 @@ public class InventoryToggle : MonoBehaviour
     bool isOn;
     public GameObject inventory;
 
-    public void Use()
+    public void Update()
     {
-        if (isOn == true)
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            isOn = false;
-            inventory.SetActive(false);
-        }
-
-        if (isOn == false)
-        {
-            isOn = true;
-            inventory.SetActive(true);
+            if (isOn == false)
+            {
+                isOn = true;
+                inventory.SetActive(true);
+                Time.timeScale = 0.0f;
+            } else if (isOn == true)
+            {
+                isOn = false;
+                inventory.SetActive(false);
+                Time.timeScale = 1.0f;
+            }
         }
     }
+
 }

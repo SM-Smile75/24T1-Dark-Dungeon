@@ -11598,6 +11598,8 @@ GameObject:
   - component: {fileID: 1219426647}
   - component: {fileID: 1219426646}
   - component: {fileID: 1219426648}
+  - component: {fileID: 1219426650}
+  - component: {fileID: 1219426649}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11695,6 +11697,35 @@ MonoBehaviour:
   sensY: 1000
   orientation: {fileID: 1799859690}
   theCamera: {fileID: 1657200878}
+--- !u!114 &1219426649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219426644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e3e5ede09c20545b3dc399fec25868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
+  draggables: {fileID: 0}
+  prefabs: {fileID: 0}
+  items: []
+--- !u!114 &1219426650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219426644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67979682ba66f7e44a6680eb15d91b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
 --- !u!1001 &1221656847
 PrefabInstance:
   m_ObjectHideFlags: 0

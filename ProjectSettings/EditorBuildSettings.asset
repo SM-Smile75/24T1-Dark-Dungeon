@@ -4,23 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: b424b90e80ab3cd4baa8f39d08aaf605
-  - enabled: 0
-    path: Assets/Scenes/MainMenuScene.unity
-    guid: 365e024b8951cc34388729c17077c12d
-  - enabled: 0
-    path: Assets/Scenes/Cutscene 1 The Chase.unity
-    guid: b7f30f4d556a70c4bb48d65fb22e83c3
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: b424b90e80ab3cd4baa8f39d08aaf605
-  - enabled: 0
-    path: Assets/Scenes/Tutoial Level Layout.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Dark Dungeon/Level 1.unity
-    guid: 7a868e3cd4188014cb189a364e9396ce
+  m_Scenes: []
   m_configObjects: {}

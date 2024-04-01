@@ -1,4 +1,4 @@
-using System.Collections;
+/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +34,7 @@ public class Click : MonoBehaviour
         }
     }
 
-    GameObject getClickedObject (out RaycastHit hit)
+    / GameObject getClickedObject (out RaycastHit hit)
     {
         GameObject target = null;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -57,3 +57,4 @@ public class Click : MonoBehaviour
         return results.Count > 0;
     }
 }
+*/

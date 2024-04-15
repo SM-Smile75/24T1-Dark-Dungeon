@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PuzzleController : MonoBehaviour
 {
-    public Torch1[] torches;
-    private bool[] correctPattern = { true, false, true, true, false, true };
+    public Lights[] torches;
+    private bool[] correctPattern = { true, false, true, false, true, false, true, false};
     public GameObject door;
     public AudioSource puzzleCompleteSound;
     public string nextSceneName;
@@ -11,7 +11,7 @@ public class PuzzleController : MonoBehaviour
     {
         for (int i = 0; i < torches.Length; i++)
         {
-            if (torches[i].isLit != correctPattern[i])
+            if (torches[i].lightsOn != correctPattern[i])
                 return;
         }
         PuzzleSolved();

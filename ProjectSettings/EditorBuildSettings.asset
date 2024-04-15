@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Dark Dungeon/Level 1 copy.unity
-    guid: 470cde5ee693c404abe8745219151a32
+    path: Assets/Scenes/Dark Dungeon/Level 1.unity
+    guid: 7a868e3cd4188014cb189a364e9396ce
   - enabled: 1
-    path: Assets/Scenes/Dark Dungeon/Ending.unity
-    guid: d1161fa6901391f4eb9b875fa59128b4
+    path: Assets/Scenes/Dark Dungeon/Level 2.unity
+    guid: 558278eb0c70d224790d8355bff5dfd2
   m_configObjects: {}

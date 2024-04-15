@@ -16,13 +16,14 @@ public class Lights : MonoBehaviour, IInteractable
     {
         if (lightsOn == false)
         {
-            lights.SetActive(false);
+            lights.SetActive(true);
             lightsOn = true;
         }
         else
         {
-            lights.SetActive(true);
+            
             lightsOn = false;
+            lights.SetActive(false);
         }
     }
 

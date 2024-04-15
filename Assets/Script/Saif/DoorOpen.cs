@@ -10,15 +10,29 @@ public class DoorOpen : MonoBehaviour, IInteractable
     }
 
     Animator animator;
+    bool doorOpen;
+    public GameObject theDoor;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        doorOpen = false;
+        animator = theDoor.GetComponent<Animator>();
     }
 
     public void OpenDoor()
     {
-        animator.SetTrigger("Unlocked");
+        if(doorOpen == false)
+        {
+            animator.SetBool("Door Open", true);
+            doorOpen = true;
+        }
+        else
+        {
+            animator.SetBool("Door Open", false);
+            doorOpen = false;
+        }
+        
+
     }
 
 }

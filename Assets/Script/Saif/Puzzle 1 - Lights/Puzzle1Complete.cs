@@ -8,6 +8,6 @@ public class Puzzle1Complete : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene("Main Menu");
     }
 }

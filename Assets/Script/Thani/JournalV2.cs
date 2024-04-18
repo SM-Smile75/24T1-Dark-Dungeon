@@ -8,17 +8,17 @@ public class JournalV2 : MonoBehaviour
     [TextArea(10, 20)]
     [SerializeField] private string pageText;
     [Space]
-    [SerializeField] private TMPro_Text leftPage;
-    [SerializeField] private TMPro_Text rightPage;
+    [SerializeField] private TextMeshProUGUI leftPage;
+    [SerializeField] private TextMeshProUGUI rightPage;
     [Space]
-    [SerializeField] private TMPro_Text leftPagination;
-    [SerializeField] private TMPro_Text rightPagination;
+    [SerializeField] private TextMeshProUGUI leftPagination;
+    [SerializeField] private TextMeshProUGUI rightPagination;
 
     private void OnValidate()
     {
         UpdatePagination();
 
-        if (leftSide.text == pageText)
+        if (leftPage.text == pageText)
         {
             return;
         }
@@ -45,45 +45,45 @@ public class JournalV2 : MonoBehaviour
 
     public void PreviousPage()
     {
-        if (leftSide.pageToDisplay < 1)
+        if (leftPage.pageToDisplay < 1)
         {
-            leftSide.pageToDisplay = 1;
+            leftPage.pageToDisplay = 1;
             return;
         }
 
-        if (leftSide.pageToDisplay -2 > 1)
+        if (leftPage.pageToDisplay -2 > 1)
         {
-            leftSide.pageToDisplay -=2;
+            leftPage.pageToDisplay -=2;
         }
         else
         {
-            leftSide.pageToDisplay = 1;
+            leftPage.pageToDisplay = 1;
         }
 
-        rightSide.pageToDisplay = leftSide.pageToDisplay+1;
+        rightPage.pageToDisplay = leftPage.pageToDisplay+1;
 
         UpdatePagination();
     }
 
     public void NextPage()
     {
-        if (rightSide.pageToDisplay >= rightSide.textInfo.pageCount)
+        if (rightPage.pageToDisplay >= rightPage.textInfo.pageCount)
         {
             return;
         }
 
-        if (leftSide.pageToDisplay >= leftSide.textInfo.pageCount - 1)
+        if (leftPage.pageToDisplay >= leftPage.textInfo.pageCount - 1)
         {
-            leftSide.pageToDisplay = leftSide.textInfo.pageCount - 1;
-            rightSide.pageToDisplay = leftSide.pageToDisplay + 1;
+            leftPage.pageToDisplay = leftPage.textInfo.pageCount - 1;
+            rightPage.pageToDisplay = leftPage.pageToDisplay + 1;
         }
         else
         {
-            leftSide.pageToDisplay += 2;
-            rightSide.pageToDisplay = leftSide.pageToDisplay + 1;
+            leftPage.pageToDisplay += 2;
+            rightPage.pageToDisplay = leftPage.pageToDisplay + 1;
         }
 
-        rightSide.pageToDisplay = leftSide.pageToDisplay + 1;
+        rightPage.pageToDisplay = leftPage.pageToDisplay + 1;
 
         UpdatePagination();
     }

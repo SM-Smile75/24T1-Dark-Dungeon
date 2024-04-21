@@ -7,6 +7,7 @@ public class PlayerUI : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject journalBook;
+    public GameObject cursorPoint;
     public GameObject player;
     public GameObject camPlayer;
 
@@ -23,6 +24,7 @@ public class PlayerUI : MonoBehaviour
         Cursor.visible = true;
         camPlayer.GetComponent<PlayerCam>().enabled = false;
         pauseMenu.SetActive(true);
+        cursorPoint.SetActive(false);
         player.SetActive(false);
     }
     public void ContinueGame()
@@ -33,6 +35,7 @@ public class PlayerUI : MonoBehaviour
         camPlayer.GetComponent<PlayerCam>().enabled = true;
         pauseMenu.SetActive(false);
         journalBook.SetActive(false);
+        cursorPoint.SetActive(true);
         player.SetActive(true);
 
     }
@@ -42,6 +45,7 @@ public class PlayerUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = true;
         camPlayer.GetComponent<PlayerCam>().enabled = false;
+        cursorPoint.SetActive(false);
         journalBook.SetActive(true);
         player.SetActive(false);
 
@@ -61,10 +65,14 @@ public class PlayerUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.activeSelf)
         {
             journalBook.SetActive(false);
             PauseGame();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf)
+        {
+            ContinueGame();
         }
         if (Input.GetKeyDown(KeyCode.Tab) && !journalBook.activeSelf)
         {

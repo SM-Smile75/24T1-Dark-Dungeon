@@ -14,6 +14,8 @@ public class Puzzle1Goals : MonoBehaviour, IInteractable
     private bool[] correctPattern = { true, false, true, false, true, false, true, true};
     public Animator doorOpen;
     int theNumber = 0;
+    public AudioSource doorLocked;
+    public AudioSource doorUnocked;
 
     public void Puzzle1Solved()
     {
@@ -36,6 +38,7 @@ public class Puzzle1Goals : MonoBehaviour, IInteractable
         else
         {
             theNumber = 0;
+            
         }
     }
 

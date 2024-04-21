@@ -10,23 +10,41 @@ interface IInteractable
 
 public class Interact : MonoBehaviour
 {
+    public GameObject cursorPointer;
+    public GameObject cursorInteract;
     public Transform InteractSource;
     public float InteractRange;
 
+    void Start()
+    {
+        cursorPointer.SetActive(true);
+        cursorInteract.SetActive(false);
+    }
+
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))
+        Ray ray = new Ray(InteractSource.position, InteractSource.forward);
+        
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, InteractRange))
         {
-            Ray ray = new Ray(InteractSource.position, InteractSource.forward);
 
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, InteractRange))
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+                cursorPointer.SetActive(false);
+                cursorInteract.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactObj.Interact();
                 }
+
             }
         }
+        else
+        {
+            cursorPointer.SetActive(true);
+            cursorInteract.SetActive(false);
+        }
+
     }
 }

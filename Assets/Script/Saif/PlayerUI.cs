@@ -18,6 +18,25 @@ public class PlayerUI : MonoBehaviour
 
     }
 
+    public void TextBoxStart()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        camPlayer.GetComponent<PlayerCam>().enabled = true;
+        cursorPoint.SetActive(false);
+        player.SetActive(false);
+
+    }
+
+    public void ReadyToMove() 
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        camPlayer.GetComponent<PlayerCam>().enabled = false;
+        cursorPoint.SetActive(false);
+        player.SetActive(false);
+    }
+
     public void PauseGame()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -26,6 +45,7 @@ public class PlayerUI : MonoBehaviour
         pauseMenu.SetActive(true);
         cursorPoint.SetActive(false);
         player.SetActive(false);
+        Time.timeScale = 0;
     }
     public void ContinueGame()
     {
@@ -37,28 +57,32 @@ public class PlayerUI : MonoBehaviour
         journalBook.SetActive(false);
         cursorPoint.SetActive(true);
         player.SetActive(true);
+        Time.timeScale = 1;
 
     }
     public void JournalBook()
     {
 
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         camPlayer.GetComponent<PlayerCam>().enabled = false;
         cursorPoint.SetActive(false);
         journalBook.SetActive(true);
         player.SetActive(false);
+        Time.timeScale = 1;
 
     }
 
 
     public void RestartLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -83,5 +107,6 @@ public class PlayerUI : MonoBehaviour
         {
             ContinueGame();
         }
+
     }
 }

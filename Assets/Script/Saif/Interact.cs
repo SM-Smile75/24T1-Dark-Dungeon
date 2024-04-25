@@ -28,8 +28,9 @@ public class Interact : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitInfo, InteractRange))
         {
 
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+            if(hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
+                
                 cursorPointer.SetActive(false);
                 cursorInteract.SetActive(true);
 

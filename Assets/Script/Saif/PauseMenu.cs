@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
             camPlayer.GetComponent<PlayerCam>().enabled = false;
             pauseMenu.SetActive(true);
             player.SetActive(false);
+            Time.timeScale = 0;
     }
     public void ContinueGame()
     {
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         camPlayer.GetComponent<PlayerCam>().enabled = true;
         pauseMenu.SetActive(false);
         player.SetActive(true);
+        Time.timeScale = 1;
 
     }
 
@@ -47,9 +49,13 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.activeSelf)
         {
             PauseGame();
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf)
+        {
+            ContinueGame();
         }
     }
 }

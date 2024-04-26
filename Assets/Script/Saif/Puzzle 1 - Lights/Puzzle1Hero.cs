@@ -38,4 +38,5 @@ public class Puzzle1Hero : MonoBehaviour, IInteractable
         player.SetActive(true);
 
     }
+
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class NextLevel : MonoBehaviour, IInteractable
 {
@@ -12,11 +13,13 @@ public class NextLevel : MonoBehaviour, IInteractable
     public GameObject notReadyBox;
     public GameObject theJournal;
     PlayerUI thePlayer;
+    public PlayableDirector sceneTransition;
 
     void Start()
     {
         thePlayer = GameObject.Find("PlayerUI").GetComponent<PlayerUI>();
         notReadyBox.SetActive(false);
+
     }
     public void ReadyToExplore()
     {
@@ -28,7 +31,6 @@ public class NextLevel : MonoBehaviour, IInteractable
         else { 
         readyBox.SetActive(true);
         thePlayer.ReadyToMove();
-    
         }
     }
     public void NotReady()
@@ -36,6 +38,12 @@ public class NextLevel : MonoBehaviour, IInteractable
         notReadyBox.SetActive(false);
         readyBox.SetActive(false);
         thePlayer.ContinueGame();
+    }
+    public void CustscenePlay()
+    {
+        notReadyBox.SetActive(false);
+        readyBox.SetActive(false);
+        sceneTransition.Play();
     }
     void Update()
     {

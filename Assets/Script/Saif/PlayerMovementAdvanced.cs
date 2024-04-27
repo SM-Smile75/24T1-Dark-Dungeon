@@ -38,6 +38,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
 
     public Transform orientation;
+    public bool invincible;
+    public float invincibleTime;
 
     float horizontalInput;
     float verticalInput;
@@ -63,6 +65,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         readyToJump = true;
 
         startYScale = transform.localScale.y;
+        invincibleTime = 0;
     }
 
     private void Update()
@@ -84,6 +87,15 @@ public class PlayerMovementAdvanced : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+
+        invincibleTime += Time.fixedDeltaTime;
+        Debug.Log(invincibleTime);
+
+        if(invincible = true && invincibleTime > 10)
+        {
+            invincible = false;
+            Debug.Log("Invincible off!");
+        }
     }
 
     private void MyInput()
@@ -150,7 +162,16 @@ public class PlayerMovementAdvanced : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        if (collision.gameObject.CompareTag("Invincibility"))
+        {
+            invincible = true;
+            invincibleTime = 0;
+            Debug.Log("Invincible on!");
+            Destroy(collision.gameObject);
+        }
     }
+
     private void MovePlayer()
     {
         // calculate movement direction

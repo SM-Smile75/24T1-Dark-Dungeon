@@ -10,11 +10,13 @@ public class PlayerUI : MonoBehaviour
     public GameObject cursorPoint;
     public GameObject player;
     public GameObject camPlayer;
+    public bool isPaused;
 
     void Start()
     {
         pauseMenu.SetActive(false);
         journalBook.SetActive(false);
+        isPaused = false;
 
     }
 
@@ -46,6 +48,7 @@ public class PlayerUI : MonoBehaviour
         cursorPoint.SetActive(false);
         player.SetActive(false);
         Time.timeScale = 0;
+        isPaused = true;
     }
     public void ContinueGame()
     {
@@ -58,6 +61,7 @@ public class PlayerUI : MonoBehaviour
         cursorPoint.SetActive(true);
         player.SetActive(true);
         Time.timeScale = 1;
+        isPaused = false;
 
     }
     public void JournalBook()

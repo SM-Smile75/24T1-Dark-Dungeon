@@ -10,17 +10,22 @@ public class Ghost : MonoBehaviour
 
     public float playerSpace;
     public GameObject player;
-    public GameObject pauseSensor;
+    public PlayerMovementAdvanced playerStats;
+    public PlayerUI pauseSensor;
 
     void FixedUpdate()
     {
         ghostMovement = ghostSpeed * Time.deltaTime;
         ghostDistance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (ghostDistance > playerSpace && pauseSensor.paused == true)
+        if (ghostDistance > playerSpace && pauseSensor.isPaused == false && playerStats.invincible == false)
         {
-            transform.rotation = Quarternion.LookRotation(player.transform.position - transform.position, transform.up);
+            transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up);
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, ghostMovement);
+        } else if (pauseSensor.isPaused == false && playerStats.invincible == true)
+        {
+            transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, -1 * ghostSpeed * Time.deltaTime);
         }
     }
 }

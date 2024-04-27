@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PlayerCam : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class PlayerCam : MonoBehaviour
 
     public Transform theCamera;
 
+    public GameObject player;
+    public GameObject playerUI;
+
+    public GameObject cutsceneTransition;
+    public PlayableDirector playCutscene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +28,19 @@ public class PlayerCam : MonoBehaviour
     }
 
 
+    public void PlayCutscene()
+    {
+        player.SetActive(false);
+        playerUI.SetActive(false);
+        cutsceneTransition.SetActive(true);
+    }
+
+    public void StopCutscene()
+    {
+        player.SetActive(true);
+        playerUI.SetActive(true);
+        cutsceneTransition.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,5 +60,12 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
         transform.position = theCamera.position;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            StopCutscene();
+            playCutscene.Stop();
+        }
+
     }
 }

@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerClickHandler
 {
-    public ItemInInventory thisItem { get; set; }
+    public ItemInInventory thisItem {get; set;}
     public SlotLabel thisTag;
 
-    public void OnPointerClick(PointerEventData data)
+    public void OnPointerClick (PointerEventData data)
     {
-        if (data.button == PointerEventData.InputButton.Left)
+        if(data.button == PointerEventData.InputButton.Left)
         {
             if(InventoryProgram.carriedItem == null) return;
             if(thisTag != SlotLabel.Misc && InventoryProgram.carriedItem.thisItem.thisLabel != thisTag)

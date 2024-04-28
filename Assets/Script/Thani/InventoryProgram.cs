@@ -23,7 +23,7 @@ public class InventoryProgram : MonoBehaviour
     void Update()
     {
         if (carriedItem == null) return;
-
+        
         carriedItem.transform.position = Input.mousePosition;
     }
 

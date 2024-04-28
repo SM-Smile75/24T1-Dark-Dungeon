@@ -7,9 +7,9 @@ using UnityEngine.EventSystems;
 public class ItemInInventory : MonoBehaviour, IPointerClickHandler
 {
     Image icon;
-    public CanvasGroup canvas {  get; private set; }
-    public Item thisItem { get; set; }
-    public Slot slot { get; set; }
+    public CanvasGroup canvas{get; private set;}
+    public Item thisItem{get; set;}
+    public Slot slot{get; set;}
 
     void Awake()
     {
@@ -27,7 +27,7 @@ public class ItemInInventory : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData data)
     {
-        if (data.button == PointerEventData.InputButton.Left)
+        if(data.button == PointerEventData.InputButton.Left)
         {
             InventoryProgram.Singleton.SetCarriedItem(this);
         }

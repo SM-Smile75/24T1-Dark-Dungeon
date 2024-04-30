@@ -9,6 +9,6 @@ public class Puzzle1Complete : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Level 4");
     }
 }

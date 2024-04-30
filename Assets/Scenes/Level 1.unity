@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.8
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3351089, g: 0.3420529, b: 0.3219946, a: 0.8}
+  m_IndirectSpecularColor: {r: 0.3351087, g: 0.34205276, b: 0.32199422, a: 0.8}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8172,77 +8172,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f145f475f4beb324fbaec8fbf4ceb1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pageText: 'A
+  pageText: 'Journal Entry 1
 
-    B
 
-    C
+    Whelp, this was a mistake
 
-    D
 
-    E
 
-    F
-
-    G
-
-    H
-
-    I
-
-    J
-
-    K
-
-    L
-
-    M
-
-    N
-
-    O
-
-    P
-
-    Q
-
-    R
-
-    S
-
-    T
-
-    U
-
-    V
-
-    W
-
-    X
-
-    Y
-
-    Z
-
-    1
-
+    Journal Entry
     2
 
-    3
 
-    4
+    Well i''m stuck here for now, might as well enjoy it, I''m going to explore
+    these rooms
 
-    5
 
-    6
+    Journal Entry 3
 
-    7
 
-    8
+    I have an eerie feeling about this, I''m
+    used to dungeon designers conveying their intentions through objects and their
+    placements, but in here it feels even more deliberate
 
-    9
 
-    0'
+'
   leftPage: {fileID: 986190035}
   rightPage: {fileID: 1516543827}
   leftPagination: {fileID: 702624703}
@@ -16942,77 +16895,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A
+  m_text: 'Journal Entry 1
 
-    B
 
-    C
+    Whelp, this was a mistake
 
-    D
 
-    E
 
-    F
+    Journal Entry 2
 
-    G
 
-    H
+    Well
+    i''m stuck here for now, might as well enjoy it, I''m going to explore these
+    rooms
 
-    I
 
-    J
+    Journal Entry 3
 
-    K
 
-    L
+    I have an eerie feeling about this, I''m used
+    to dungeon designers conveying their intentions through objects and their placements,
+    but in here it feels even more deliberate
 
-    M
 
-    N
-
-    O
-
-    P
-
-    Q
-
-    R
-
-    S
-
-    T
-
-    U
-
-    V
-
-    W
-
-    X
-
-    Y
-
-    Z
-
-    1
-
-    2
-
-    3
-
-    4
-
-    5
-
-    6
-
-    7
-
-    8
-
-    9
-
-    0'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27450,77 +27356,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A
+  m_text: 'Journal Entry 1
 
-    B
 
-    C
+    Whelp, this was a mistake
 
-    D
 
-    E
 
-    F
+    Journal Entry 2
 
-    G
 
-    H
+    Well
+    i''m stuck here for now, might as well enjoy it, I''m going to explore these
+    rooms
 
-    I
 
-    J
+    Journal Entry 3
 
-    K
 
-    L
+    I have an eerie feeling about this, I''m used
+    to dungeon designers conveying their intentions through objects and their placements,
+    but in here it feels even more deliberate
 
-    M
 
-    N
-
-    O
-
-    P
-
-    Q
-
-    R
-
-    S
-
-    T
-
-    U
-
-    V
-
-    W
-
-    X
-
-    Y
-
-    Z
-
-    1
-
-    2
-
-    3
-
-    4
-
-    5
-
-    6
-
-    7
-
-    8
-
-    9
-
-    0'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -8,40 +8,39 @@ public class JournalV2 : MonoBehaviour
     [TextArea(10, 20)]
     [SerializeField] private string pageText;
     [Space]
-    [SerializeField] private TextMeshProUGUI leftText;
-    [SerializeField] private TextMeshProUGUI rightText;
+    [SerializeField] private TextMeshProUGUI leftPage;
+    [SerializeField] private TextMeshProUGUI rightPage;
     [Space]
-    [SerializeField] private TextMeshProUGUI leftStuffing;
-    [SerializeField] private TextMeshProUGUI rightStuffing;
+    [SerializeField] private TextMeshProUGUI leftPagination;
+    [SerializeField] private TextMeshProUGUI rightPagination;
 
     private void OnValidate()
     {
-        UpdatePages();
-        
-        if(leftText.text = pageText)
+        UpdatePagination();
+
+        if (leftPage.text == pageText)
         {
             return;
         }
 
-        SetUpPages();
+        SetupContent();
     }
 
     private void Awake()
     {
-        SetUpPages();
-        UpdatePages();
+        SetupContent();
+        UpdatePagination();
     }
 
-    private void SetUpPages()
+    private void SetupContent()
     {
-        leftText.text = pageText;
-        rightText.text = pageText;
+        leftPage.text = pageText;
+        rightPage.text = pageText;
     }
-
-    private void UpdatePages()
+    private void UpdatePagination()
     {
-        leftStuffing.text = leftPage.pageToDisplay.ToString();
-        rightStuffing.text = rightPage.pageToDisplay.ToString();
+        leftPagination.text = leftPage.pageToDisplay.ToString();
+        rightPagination.text = rightPage.pageToDisplay.ToString();
     }
 
     public void PreviousPage()
@@ -54,32 +53,38 @@ public class JournalV2 : MonoBehaviour
 
         if (leftPage.pageToDisplay -2 > 1)
         {
-            leftPage.pageToDisplay -= 2;
-        } else {
+            leftPage.pageToDisplay -=2;
+        }
+        else
+        {
             leftPage.pageToDisplay = 1;
         }
 
-        rightPage.pageToDisplay = leftPage.pageToDisplay + 1;
-        UpdatePages();
+        rightPage.pageToDisplay = leftPage.pageToDisplay+1;
+
+        UpdatePagination();
     }
 
     public void NextPage()
     {
-        if(rightPage.pageToDisplay >= rightPage.textInfo.pageCount)
+        if (rightPage.pageToDisplay >= rightPage.textInfo.pageCount)
         {
             return;
         }
 
-        if(leftPage.pageToDisplay >= leftPage.textInfo.pageCount - 1)
+        if (leftPage.pageToDisplay >= leftPage.textInfo.pageCount - 1)
         {
             leftPage.pageToDisplay = leftPage.textInfo.pageCount - 1;
             rightPage.pageToDisplay = leftPage.pageToDisplay + 1;
-        } else {
+        }
+        else
+        {
             leftPage.pageToDisplay += 2;
             rightPage.pageToDisplay = leftPage.pageToDisplay + 1;
         }
 
         rightPage.pageToDisplay = leftPage.pageToDisplay + 1;
-        UpdatePages();
+
+        UpdatePagination();
     }
 }
